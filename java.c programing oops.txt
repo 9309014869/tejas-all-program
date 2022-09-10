@@ -1,0 +1,338 @@
+
+
+
+
+
+
+
+
+
+
+class HelloWorld {
+    static int add(int x,int y){
+        int z;
+        if(x>y){
+        z=x+y;
+        }
+        else
+        {
+            z=x*y;
+        }
+        return z;
+    }
+    static double area(int r)
+    {
+        double p;
+        p=3.14*r*r;
+        return p;
+    }
+    public static void main(String[] args) {
+       // int a=4;
+       // int b=5;
+        int c=add(9,67);
+        int h=add(348,98);
+        System.out.println("akhi\n"+ c);
+      double m=area(9); 
+        System.out.println(m);
+    }
+}
+
+
+
+
+class HelloWorld {
+    static int fact(int n){
+    int i,k=1;
+    for(i=1;i<=n;i++){
+         k=i*k; 
+    }
+    return k;
+    }
+    static int sum(int ...arr){
+        int result=0;
+        for(int a:arr){
+            result=a+result ;
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        
+        System.out.println("factorial="+fact(5));
+        System.out.println("sum="+ sum(4,5,7));
+    }
+}
+
+
+
+
+
+
+////error///
+
+class Main{
+  int salary;
+  String name;
+    public int getSalary(){
+        return salary;       
+    }
+     public int getName(){
+        return name;       
+    }
+    }
+    public class Employe{
+  public static void main(String[] args) {
+   Main  myObj = new Main();
+    myObj.getSalary = 25; // x is now 25
+    System.out.println(myObj.getSalary);
+  }
+}
+
+
+
+
+class HelloWorld {
+    protected String brand="stimulas";
+    public void paragoan(){
+        System.out.println("paragon paralite");
+    }
+}
+    class Sandal extends HelloWorld {
+        private String price="fivehundred";
+    public static void main(String[] args) {
+    Sandal mysandal=new Sandal();
+    mysandal.paragoan();
+        System.out.println(mysandal.price+"\n "
+        + mysandal.brand);
+    }
+}
+
+
+
+
+
+class HelloWorld {
+   int lenth;
+   int breath;
+   public HelloWorld(int l,int b){
+       lenth=l;
+       breath=b;
+   }
+  
+    public int getArea(){
+        return lenth*breath;
+    }
+    public int getPerimeter(){
+        return 2*(lenth*breath);
+    }
+    public static void main(String[] args) {
+     HelloWorld a=new HelloWorld(4,5);
+     HelloWorld b=new HelloWorld(5,8);
+        System.out.println(a.getArea());
+        System.out.println(b.getArea());
+        System.out.println(a.getPerimeter());
+        System.out.println(b.getPerimeter());
+    }
+}
+
+
+System.out.println(sc.getSalary());
+
+
+
+
+
+
+
+
+
+
+
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+    
+    int a[]={1,2,3,4,5};
+    System.out.print("given number");
+    int n=a.length;
+    for(int i=0;i<n;i++)
+    {
+        System.out.println(""+a[i]);
+    }
+for(int i=0;i<n;i++)
+{
+    for(int j=i+1;j<n;j++){
+        if(a[i]<a[j]){
+            int tem=a[i];
+            a[i]=a[j];
+            a[j]=tem;
+    }
+    }
+}
+    System.out.print("given number");
+    for(int i=0;i<n;i++){
+        System.out.println(""+a[i]);
+    }
+    System.out.println(" ");
+    
+    }
+}
+
+
+
+
+
+
+class Member{
+    String name;
+    int age;
+    String phoneno;
+    String address;
+    int Salary;
+    
+    Public void printSalary(){
+  System.out.println(salary);
+        
+    }
+    class Employee extends Member{
+        String specialization;
+    }
+    class Maneger extends Member{
+        String deparment;
+    }
+    class Main{
+        public static void main(String []args){
+            Employee sc=new Employee ();
+            sc.name="tejas";
+            sc.age=19;
+            sc.number="9309014869";
+            sc.address="at degaon, post linga,ta risod,dist washim";
+            sc.salary=357;
+            sc.specialization="abcd";
+            
+        }
+        Maneger n=new maneger();
+        n.salary=789;
+    }
+    
+        
+
+
+
+
+abstract class Bank{
+  public abstract  void getBalence();
+      
+  class BankA extends Bank{
+      @Override
+      public void getBalence(){
+          System.out.println("deposite 100");
+      }
+  }
+  class BankB extends Bank{
+      @Override
+      public void getBalence(){
+          System.out.println("deposite 150");
+      }
+  } class BankC extends Bank{
+       @Override
+      public void getBalence(){
+          System.out.println("deposite 200");
+      }
+  }
+  public class Main{
+      public static void main(String[] args){
+         BankA sc = new BankA();
+         sc.getBalence();
+      }
+  }
+  }
+        
+
+
+
+public class Bank{
+    int val;
+    String nameofdestributer;
+    String typaccount;
+    int a=new int[60];
+    float balanceinacc;
+    public int getInital(){
+        return val;
+    }
+    public void setInital(int val){
+        this.val=val;
+    }
+    public int deposit(){
+      int  d=2000;
+    }
+       public int withdraw)(int amount) 
+       balanceinacc=(val+d)-amount;
+    }
+    public String dispaly(String name){
+        balanceinacc;
+    }
+    public call
+}
+
+
+
+
+
+
+import java.util,Scanner;
+class BankDetails{
+    private String name;
+    private String accno;
+    private string acc_tyape;
+    private long blance;
+    Scanner sc = new Scanner(System.in);
+    public void openAccount(){
+  System.out.println("enter the  account number");
+accno=sc.next();
+System.out.println("enter the acctype");
+acc_tyape=sc.next();
+System.out.println("enter your name");
+name=sc.next();
+System.out.println("enter Balance");
+balance=sc.nextLong();
+}
+pubic void showAccount(){
+    System.out.println("Name  of account holder"+ name);
+    System.out.println("Account no",accno);
+    System.out.println("Accont type" + acc_tyape);
+    System.out.println("Blance"+  balance);
+}
+public void deposit(){
+    long amt;
+    System.out.println("enter amount to youd dposite");
+    amt=sc.nextLong();
+    balance=balence+amt;
+}
+ public void withdraw(){
+     int amt;
+     System.out.println("enter the amount to withdraw")'
+     amt=sc.nextLong();
+     if(balance>amt){
+         balance=balence-amt;
+         System.out,println("balance after withdrawal"+balance);
+     }
+     else{
+         System.out.println("your balance is less"+amt+"\Transction faild ...!!");
+     }
+ }
+ public boolen search(String acc_no){
+     if(accno.equal(acc_no)){
+         showAccount(){
+             return(true);
+         }
+         else{
+             return(false);
+         }
+     }
+ }
+ 
+ 
+         
+     }
+ }
