@@ -1,0 +1,50 @@
+abstract class Marks{
+    abstract int getPercentage();
+    
+}
+class A extends Marks{
+  int s1,s2,s3;
+  int per=0;
+    A(int a,int b,int c){
+         s1=a;
+        s2=b;
+        s3=c;
+        
+    
+    
+}
+    @Override
+    public int getPercentage(){
+        per =((s1+s2+s3)*100)/300;
+        return per;
+        
+    }
+    
+}
+class B extends Marks{
+    int s1,s2,s3,s4;
+    int per=0;
+    B(int a,int b,int c,int d){
+        s1=a;
+        s2=b;
+        s3=c;
+        s4=d;
+    
+}
+@Override
+    public int getPercentage(){
+        per =((s1+s2+s3+s4)*100)/400;
+        return per;
+        
+    }
+    
+}
+class Main{
+   public static void main(String[] args){
+       A sc=new A(36,89,90);
+    System.out.println(sc.getPercentage());
+    B at = new B(56,78,90,34);
+    System.out.println(at.getPercentage());
+    
+   } 
+}
