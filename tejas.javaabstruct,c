@@ -1,0 +1,24 @@
+abstract class Parent{
+   public abstract void message();
+    }
+    class Subclass extends Parent{
+          @Override
+     public void message(){
+          
+        System.out.println ("this");
+    }
+    }
+        class Second  extends Parent{
+            @Override
+      public void message(){
+            System.out.println("this first class");
+        }
+    }
+  class Main{
+    public static void main(String [] args){
+        Subclass sc=new Subclass();
+        sc.message();
+        Second at=new Second();
+        at.message();
+    }
+}
