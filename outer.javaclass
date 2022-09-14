@@ -1,0 +1,21 @@
+
+class Outer{
+    int x=90;
+    class Inner{
+        String name="tejas";
+        public void innerDisplay(){
+            System.out.println(x);
+            System.out.println(name);
+        }
+    }
+    public  void outer (){
+        Inner sc=new Inner();
+        sc.innerDisplay();
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Outer.Inner oi=new Outer().new Inner();
+        oi.innerDisplay();
+    }
+}
