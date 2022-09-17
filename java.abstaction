@@ -1,0 +1,15 @@
+abstract class Tejas{
+    abstract void display();
+    class Inner{
+        void display(){
+            Tejas my=new Tejas()
+            {
+                void display()
+                {
+                    System.out.println("HAPPY BIRTHDAY");
+                }
+            };
+            my.display();
+        }
+    }
+}
