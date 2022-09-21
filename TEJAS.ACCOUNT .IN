@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Account{
+    private String pin;
+    private String accountno;
+    private String passwordatm;
+    private String genratePi(){
+        Scanner as = new Scanner(System.in);
+        int a=as.nextInt();
+        String pin="Your-"+a;
+        return pin;
+    }
+  public  Account(){
+      pin=genratePi();
+  }
+  public String getPin(){
+      return pin;
+  }
+  public String getaccountno(){
+      String accountno="pp.math.em.ipphone";
+      return accountno;
+  }
+}
+class Main{
+    public static void main(String[] args){
+      Account sc=new Account();
+      System.out.print("your pi no is");
+     System.out.print(sc.getPin());
+     sc.getaccountno();
+    }
+}
