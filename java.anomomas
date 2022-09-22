@@ -1,0 +1,20 @@
+abstract class Akash{
+    abstract void display();
+}
+class Outer{
+    int x=12;
+    public void meth(){
+      Akash my=new Akash(){
+          public void display(){
+              System.out.println("Happy Birthday akash");
+          }
+      };
+      my.display();
+    }
+}
+class Main{
+    public static void main(String [] args){
+        Outer sc=new Outer();
+        sc.meth();
+    }
+}
