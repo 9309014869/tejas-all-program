@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+    int data;
+     struct node *next;
+};
+
+struct node *rear=null;
+struct node *fornt=null;
+
+void enque(){
+    int val;
+ struct node  *x=(struct node*)malloc(sizeof(struct node));
+    printf("enter the value\n");
+        scanf("%d",&val);
+        x->data=val;
+        x->next=null;
+    if(fornt==null&&rear==null){
+        fornt=rear=x;
+    }
+    else{
+        rear->next=x;
+    rear=x;
+    
+}}
+void deque() {
+    int val;
+if(fornt==null){
+    printf("empty");
+}
+else{
+struct node *p=fornt;
+   val=fornt->data;
+   fornt=fornt->next;
+   printf("elemnt=%d\n",val);
+   free(p);
+    
+}
+}
+void display(){
+    struct node *ptr=fornt;
+    if(fornt==null){
+        printf("empty\n");
+    }
+    while(ptr!=0){
+        printf("%d",ptr->data);
+        ptr=ptr->next;
+        
+    }
+}
+int main(){
+    int choise;
+    while(1){
+    printf("enter the 1for enque\tenter the 2 for dequeu\t3for display\t4for exit\t\n");
+    scanf("%d",&choise);
+    switch(choise){
+        case 1:{
+        enque();
+      
+        }
+          break;
+        case 2:
+        {
+            deque();
+           
+        }
+         break;
+         case 3:
+         {
+             printf("enter element are\n");
+             display();
+             
+         }
+         case 4:{
+             exit(1);
+         }
+        default:
+        {
+            printf("enter correct");
+        }
+        
+    }
+}
+return 0;
+}
