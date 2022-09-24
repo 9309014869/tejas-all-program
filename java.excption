@@ -1,0 +1,19 @@
+
+Class NegativeDimensionException extends Exception{
+    public void  String toString(){
+        return "NegativeDimentionException";
+    }
+    int area(int l,int b) throw NegativeDimentionException{
+        if(i<0||b<0){
+            throw newNegativeDimensionException{
+                int c=a*b
+                return c;
+            }
+        }
+    }
+}
+class Main{
+    public static void main(String[] args){
+        
+    }
+}
