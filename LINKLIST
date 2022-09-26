@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+    int data;
+    struct node*next; 
+}*ptr=null;
+void  add(){
+    int val;
+    int i;
+    struct node *t,*last;
+    ptr=(struct node*)malloc(sizeof(struct node));
+    printf("entrer the number");
+    scanf("%d",&val);
+    ptr->data=val;
+    ptr->next=null;
+    last=ptr;
+    for(i=1;i<6;i++){
+        t=(struct node*)malloc(sizeof(struct node));
+        printf("enter the number");
+        scanf("%d",&val);
+        t->data=val;
+         t->next=null;
+        last->next=t;
+        last=t;
+    }
+}
+void display(struct node *p){
+   if(p==0){
+       printf("end link list");
+   }
+   else{
+       printf("%d\n",p->data);
+   display(p->next);
+  }
+}
+int main() {
+    add();
+    display(ptr);
+    return 0;
+}
