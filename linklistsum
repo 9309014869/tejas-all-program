@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+    int data;
+    struct node *next;
+}*ptr=null;
+   int sum=0;
+void insert(){
+    struct node *last,*t;
+  struct node *first=(struct node *)malloc(sizeof(struct node));
+    int n=90;
+    first->data=n;
+    first->next=null;
+    last=first;
+
+last=last->next;
+    ptr=(struct node*)malloc(sizeof(struct node));
+    int val=56;
+    ptr->data=val;
+    ptr->next=first;
+   last=ptr;
+    
+}
+void display(struct node *p){
+    
+    while(p!=0){
+        
+        printf("%d\n",p->data);
+        p=p->next;
+    }
+   
+}int count(struct node *p){
+    int c=0;
+    while(p!=0){
+        c++;
+        p=p->next;
+    }
+    return c;
+}
+void add(struct node *p){
+ 
+    while(p!=0){
+        sum=sum+p->data;
+        p=p->next;
+    }
+  printf("%d\n",sum);
+}
+
+int main() {
+    {
+ 
+    insert(ptr);
+      add(ptr);
+
+    display(ptr);
+    printf("%d",count(ptr));
+  
+    }
