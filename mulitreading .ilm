@@ -1,0 +1,21 @@
+class My implements Runnable
+{
+    public void run(){
+        int i=1;
+        while(true){
+            System.out.println("hello");
+            i++;
+        }
+    }
+}
+class Main{
+    public static void main(String[] args){
+       My t=new My();
+       Thread m =new Thread();
+       m.start();
+       int i=1;
+       while(true){
+          System.out.println("hi"); 
+       }
+    }
+}
