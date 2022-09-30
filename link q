@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+    int data;
+    struct node*next;
+}*rear=null,*fornt=null;
+void enque(int n)
+{
+    struct node *ptr=(struct node*)malloc(sizeof(struct node));
+ptr->data=n;
+    if(rear==null){
+        fornt=rear=ptr;
+    }
+    else{
+        rear->next=ptr;
+        rear=ptr;
+        printf("node is created  rear fallow by rear\n");
+    }
+    }
+    void dequeue(){
+        if(fornt==null){
+            printf(" there is no value\n");
+        }else{
+        int val;
+        struct node *p=fornt;
+     val =fornt->data;
+     fornt=fornt->next;
+     free(p);
+     printf("%d\n",val);
+    }
+}
+void display(){
+    if(fornt==0){
+        printf("empty first enter val\n");
+    }
+    else{
+        struct node*p=fornt;
+       printf("the element are  in queue\n");
+        printf("%d",p->data);
+        display(p->next);
+    }
+}
+    
+
+int main() {
+    int choise;
+    int val;
+while (1){
+    printf("ENTER THE 1 FOR ENQEUE\tENTER THE 2 FOR DEQUE\tENTER THE 3 TO DISPLAY\n");
+    scanf("%d",&choise);
+    switch(choise){
+        case 1:
+        {
+            
+            printf("enter the value user\n");
+            scanf("%d",&val);
+            enque(val);
+        }
+        break;
+        case 2:{
+            dequeue();
+        }
+        break;
+        case 3:
+        {
+          display();  
+        }
+        break;
+    }
+}return 0;
+    
+}
