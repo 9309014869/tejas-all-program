@@ -1,0 +1,21 @@
+class MyThreard extends Thread
+{
+    public MyThreard(String name){
+        super(name);
+       //setpriority(2);
+    }
+}
+
+class Main{
+    public static void main(String [] args)throws Exception
+    {
+        MyThreard t=new MyThreard("my Army");
+     System.out.println("id"+t.getId());
+     System.out.println("Name"+t.getName());
+     System.out.println("priority"+t.getPriority());
+     t.start();
+    //System.out.ptintln("state"+t.getstate());
+     System.out.println("alive"+t.isAlive());
+           
+        }
+    }
