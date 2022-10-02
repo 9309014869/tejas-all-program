@@ -1,0 +1,52 @@
+public class Atm{
+    public void checkbalence(String name ){
+        System.out.printn("name"+name);
+    }
+    try{
+        Thread.sleep(100);}{
+            catch(Exception e){
+                System.out.printf("checkbalence");
+            }
+        }
+    
+    public void withdrow(String name,double amount ){
+         System.out.printn("name"+name "\n""amount"+amount);
+    }
+    try{
+        Thread.sleep(100);}
+    catch(Exception e){
+        System.out.printf("withdrow");
+        
+    }
+
+    }
+    class Custmor1 extends Thread{
+        String name
+    double amount;
+        Atm atm;
+        public Custmer(Atm name,Atm atm,double amount ){
+            this.name=name;
+            this.amount=amount;
+        }
+        public  void useAtm(){
+            atm.checkbalence(name);
+            atm.withdraw(name, amount);
+        }
+        public void run(){
+            useAtm();
+        }
+    }
+        
+      public class Main
+{
+    public static void main(String[] args) 
+    {
+        Atm atm=new Atm();
+        Customer c1=new Customer("Smith",atm,100);
+        Customer c2=new Customer("John",atm,200);
+        c1.start();
+        c2.start();
+        
+        
+    }   
+}  
