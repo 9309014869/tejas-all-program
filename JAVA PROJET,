@@ -1,0 +1,22 @@
+*******************************************************************************/
+import java.util.Scanner;
+import java.util.Random;
+public class Main{
+    public static void main(String [] args){
+        Scanner sc =new Scanner(System.in);
+    
+    System.out.printf("enter 0 to rock ,1 to paper,2 for scaiseor");
+    int Userinput=sc.nextInt();
+    Random rendom=new Random();
+    int computerInput=rendom.nextInt(13);
+    if(Userinput==computerInput){
+        System.out.printf("draw");
+    }
+        else if(Userinput==0&&computerInput==211||Userinput==1&&computerInput==0||Userinput==2&&computerInput==1){
+            System.out.printf("you win");
+        }
+        else{
+            System.out.printf("compurt is win");
+        }
+    }
+} 
