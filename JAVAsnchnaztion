@@ -1,0 +1,57 @@
+class Test{
+   
+  
+ synchronized public void display(int n){
+        for(int i=1;i<=10;i++){
+            System.out.println(i*n);
+        }
+        try{
+            Thread.sleep(1000);}
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
+}
+        
+        
+        class MyTest1 extends Thread{
+            Test n;
+         MyTest1 (Test n,String name){
+             super(name);
+           this.n=n;
+           
+       }
+       public void run(){
+           n.display(2);
+       }
+        }
+        class MyTest2 extends Thread{
+            Test n;
+    MyTest2( Test n,String name){
+        super(name);
+           this.n=n;
+       }
+       public void run(){
+           n.display(9);
+       }
+        }
+
+        class Main{
+            public static void main(String args[]){
+                Test obj=new Test();
+                MyTest1 t1 =new MyTest1(obj,"Tejas");
+                MyTest2 t2 =new MyTest2(obj,"Akash");
+                t1.start();
+                t2.start();
+                System.out.println("name"+t1.getName());
+                System.out.println("name"+t1.getId());
+                 System.out.println("name"+t2.getName());
+                System.out.println("name"+t2.getId());
+                 System.out.println("bhai bolre="+t1.isAlive());
+                System.out.println("bhai bolre="+t2.isAlive());
+                //System.out.println("state"+t1.getstate());
+               // System.out.println("sate"+t2.getstate());
+                
+            }
+        }
+    
