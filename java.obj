@@ -1,0 +1,25 @@
+class Employe{
+    int id;
+    String name;
+    int rollno;
+   public  Employe(int salary,String name){
+       System.out.println(salary);
+        System.out.println(name);
+       
+   }
+    void display(int id,String name,int rollno){
+        this.id=id;
+        this.name=name;
+        this.rollno=rollno;
+
+    }
+}
+class Main{
+    public static void main(String[] args){
+      Employe  sc=new Employe(8908,"tejas");
+      sc.display(87,"gffhd",877);
+      System.out.println(sc.id);
+       System.out.println(sc.name);
+              System.out.println(sc.rollno);
+    }
+}
