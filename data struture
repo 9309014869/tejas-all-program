@@ -1,0 +1,25 @@
+#include<stdio.h>
+void main()
+{
+  char a[3][50],b[3][50];
+  char *p[3][50];
+  int i,j;
+ 
+  printf("enter the string :\n");
+  for(i=0;i<3;i++)
+  {
+  scanf("%s",a[i]);
+  
+  for(j=0;j<50;j++)
+   {
+  p[i][j]=&a[i][j];
+  b[i][j]=*p[i][j];
+   }
+  }
+  
+  printf("new string is:\n");
+  for(i=0;i<3;i++)
+ {
+  printf("%s\n",b[i]);
+ }
+}
