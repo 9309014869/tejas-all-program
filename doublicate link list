@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define null 0
+struct node{
+    int data;
+    struct node *next;
+}*head;
+void create(){
+    struct node*ptr=(struct node*)malloc(sizeof(struct node));
+    if(ptr==null){
+        printf("enter the value");
+        scanf("%d",&ptr->data);
+        ptr->next=null;
+    }
+    else{
+        printf("enter the value");
+        scanf("%d",&ptr->data);
+        ptr->next=head;
+    }
+     head=ptr;
+}
+void search(){
+    int key;
+    struct node*t=head;
+    printf("enter the key tobe search");
+    scanf("%d",&key);
+    while(t!=0){
+        if(t->data==key){
+            printf("the key found%d\n",t->data);
+            break;
+        }
+        t=t->next;
+    }
+}
+void cheakdoublicate(){
+    int c=0;
+    int choise;
+    struct node*p=head;
+    struct node*q=head->next;
+    while(q!=0){
+        if(p->data==q->data){
+            c++;
+            printf("the doublicate data found\n");
+        }
+         p=q;
+            q=q->next;
+    }
+    printf("the data is found  times in list=%d\n",c);
+    printf("Do you want to deleate doublicate \nENTER 1 TO DELIATE SAME DATA or NOT ENTER 2\n");
+    scanf("%d\n",&choise);
+    switch(choise){
+        case 1:{
+            struct node *t=head;
+          struct node*temp=head->next;
+          while(q!=0){
+              if(p->data!=q->data){
+                  t=temp;
+                  temp=temp->next;
+              }
+              else{
+                  t->next=temp->next;
+                  free(temp);
+                  temp=t->next;
+          }
+        }
+    }
+    case 2:
+    {
+       exit(0);
+       break;
+    }
+    default :{
+    printf("enter the correct choise\n");
+    
+}
+}
+}
+void display(){
+    struct node*p=head;
+    while(p!=0){
+        printf("%d",p->data);
+        p=p->next;
+    }
+}
+
+int main() {
+    int choise;
+    while(1){
+        printf("enter the value 1tocraete\t2 diaplay");
+        scanf("%d",&choise);
+        switch(choise){
+            case 1:
+            {
+            create();
+            break;
+            }
+            case 2:{
+                display();
+                break;
+            }
+            case 3:{
+            search();
+            break;
+        }
+        case 4:
+        {
+            cheakdoublicate();
+        }
+    }
+    }
+
+    return 0;
+}
