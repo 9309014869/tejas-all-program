@@ -1,0 +1,16 @@
+class Test extends Thread
+{
+    public void run(){
+        System.out.println("dancing");
+    }
+    public static void main(String args[]){
+       Test t1=new Test();
+       Test t2=new Test();
+       System.out.println("Name of thread t1:"+t1.getName());
+        System.out.println("Name of thread t1:"+t2.getName());
+       t1.start();
+       t2.start();
+       t1.setName("PORNIMA PANDE");
+       System.out.println("AFTER changing name of t1:"+t1.getName());
+    }
+}
