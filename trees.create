@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    struct node *left,*right;
+    int data;
+}*root;
+void create(){
+    int val;
+    printf("enter the value");
+    scanf("%d",&val);
+    root=(struct node*)malloc(sizeof(struct node));
+      struct node *p=(struct node*)malloc(sizeof(struct node));
+      struct node *m=(struct node*)malloc(sizeof(struct node));
+    root->data=val;
+    root->left=p;
+    root->right=m;
+    printf("enter tehe vaklue");
+    scanf("%d",&val);
+    m->data=val;
+    scanf("%d",&val);
+    p->data=val;
+    p->right=m->right=m->left=p->left=NULL;
+    
+}
+void inorder(struct node*p){
+    while(p!=0){
+        printf("%d",p->data);
+        p=p->left;
+    }
+    while(p!=0){
+        p=p->right;
+        printf("%d",p->data);
+    }
+    }
+
+int main() 
+{
+    
+   create();
+   inorder(root);
+    return 0;
+}
