@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node*next;
+}*head;
+void create(){
+    int val;
+    int i;
+    struct node*t,*m;
+    head=(struct node*)malloc(sizeof(struct node));
+    printf("enter the Number");
+    scanf("%d",&val);
+    head->data=val;
+    head->next=NULL;
+    m=head;
+    for(i=1;i<=4;i++){
+        t=(struct node*)malloc(sizeof(struct node));
+         printf("enter the Number%d pogition",i);
+        scanf("%d",&val);
+        t->data=val;
+        t->next=NULL;
+        m->next=t;
+        m=t;
+    }
+}
+void display(){
+    struct node*p=head;
+    while(p!=0){
+        printf("%d\n",p->data);
+        p=p->next;
+    }
+}
+int main() {
+    create();
+    display();
+    return 0;
+}
