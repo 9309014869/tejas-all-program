@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAX 5
+struct node{
+int bcs126[MAX];
+int data;
+int top=-1;
+}
+typedef struct node str;
+ void push(str *p){
+     int x;
+     if(p->top==MAX-1){
+         printf("stack overflow");
+     }
+     else{
+         p->top=p->top+1;
+         scanf("%d",&val);
+         p->data[p->data]=val;
+ }
+ }
+ void pop(str *p){
+     if(p->top==-1){
+         printf("stack is empty");
+     }
+     else{
+         p->data[p->(top)--];
+     }
+ }
+ void display(str p){
+     if(p->data==-1){
+         printf("stack is empty");
+     }
+     else{
+         printf("in the satck");
+         for(i=s.top;i>=0;i--){
+             printf("%d",bcs126[i])
+         }
+     }
+     }
+ }
