@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include<stdlib.h>
+int a[5];
+int swap(int i,int j){
+           int next=a[i];
+               a[i]=a[j];
+               a[j]=next;
+               return a[i];
+}
+int main() {
+   
+   for(int i=0;i<5;i++){
+       printf("enter the numbers");
+       scanf("%d",&a[i]);
+   }
+   int j,i;
+   for(i=0;i<5;i++){
+       for(j=i+1;j<5;j++){
+           if(a[i]>a[j]){
+               swap(i,j);
+           }
+       }
+   }
+   for(int i=0;i<5;i++){
+       printf("%d\n",a[i]);
+   }
+
+    return 0;
+}
