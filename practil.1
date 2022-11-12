@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<string.h>
+int main() {
+    int i;
+  char a[2][10];
+  char b[2][10];
+  char *p[2][10];
+  for( i=0;i<2;i++)
+{
+    scanf("%s",&a[i]);
+    
+for(int j=0;j<10;j++){
+    p[i][j]=&a[i][j];
+    b[i][j]=*p[i][j];
+}
+}
+for(i=0;i<2;i++){
+    printf("entered new the string");
+    printf("=%s\n",b[i]);
+}
+
+    return 0;
+}
