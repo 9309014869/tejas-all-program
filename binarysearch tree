@@ -1,0 +1,172 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+struct node* left;
+struct node* right;
+int data;
+}*root,*temp;
+void insert();
+void search();
+void delete();
+struct node* create()
+{
+struct node* n = (struct node*)malloc(sizeof(struct node));
+n->left=NULL;
+n->right=NULL;
+return n;
+}
+void main()
+{
+printf("Enter Value:");
+int val;
+scanf("%d",&val);
+root=create();
+root->data = val;
+int choice;
+printf("1:Insert\n2:Search\n3:Delete\n4:Exit\n");
+while(1)
+{
+printf("Enter Your Choice:");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:
+insert();break;
+case 2:
+search();break;
+case 3:
+delete();break;
+case 4:
+return;
+default:
+printf("Invalid Choice!!\n");
+}
+}
+}
+void insert()
+{
+printf("Enter Value:");
+int val;
+scanf("%d",&val);
+temp=root;
+while(1)
+{
+label:
+if(val<temp->data)
+{
+if(temp->left==NULL)
+{
+temp->left=create();
+temp->left->data=val;
+return;
+}
+else
+{
+temp=temp->left;
+goto label;
+}
+}
+else
+{
+if(temp->right==NULL)
+{
+temp->right=create();
+temp->right->data=val;
+return;
+}
+else
+{
+temp=temp->right;
+goto label;
+}
+}
+}
+}
+void search()
+{
+printf("Enter Value:");
+int val;
+scanf("%d",&val);
+temp=root;
+while(1)
+{
+label:
+if(val<temp->data)
+{
+if(temp->left==NULL)
+{
+printf("%d Not Found!!\n",val);
+return;
+}
+else 
+{
+temp=temp->left;
+goto label;
+}
+}
+else if(val==temp->data)
+{
+printf("%d Found!!\n",val);
+return;
+}
+else
+{
+if(temp->right==NULL)
+{
+printf("%d Not Found!!\n",val);
+return;
+}
+else
+{
+temp=temp->right;
+goto label;
+}
+}
+}
+}
+void delete()
+{
+printf("Enter Value:");
+int val;
+scanf("%d",&val);
+temp=root;
+while(1)
+{
+label:
+if(val<temp->data)
+{
+if(temp->left==NULL)
+{
+printf("%d Not Found!!\n",val);
+return;
+}
+else 
+{
+temp=temp->left;
+goto label;
+}
+}
+else if(val==temp->data)
+{
+temp->data = NULL;
+temp->left = NULL;
+temp->right = NULL;
+printf("%d Deleted!!\n",val);
+return;
+}
+else
+{
+if(temp->right==NULL)
+{
+printf("%d Not Found!!\n",val);
+return;
+}
+else
+{
+temp=temp->right;
+goto label;
+}
+}
+}
+}
