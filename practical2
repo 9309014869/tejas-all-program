@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main()
+{
+    struct stud
+    {
+        int rn;
+        float marks;
+        char reg[20];
+        char name[20];
+    };
+    struct stud s[10];
+    int n,i;
+    printf("Enter the number of students:\n");
+    scanf("%d",&n);
+    printf("Enter roll no,marks,registration no. and name:\n");
+    for(i=0;i<=n;i++)
+    {
+        scanf("%d%f%s%s",&s[i].rn,&s[i].marks,&s[i].reg,&s[i].name);
+    }
+    printf("Student details are:\n");
+    printf("Roll no.\tMarks\tReg. no.\tName\n");
+    printf("=============================================\n\n");
+    for(i=0;i<=n;i++)
+    {
+        printf("%d\t\t%1.f\t%s\t%s\n",s[i].rn,s[i].marks,s[i].reg,s[i].name);
+    }
+}
