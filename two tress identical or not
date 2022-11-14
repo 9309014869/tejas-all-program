@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node*left,*right;
+}*root,*temp,*root1,*temp1;
+struct node*create(){
+    
+    struct node *n;
+    n=(struct node*)malloc(sizeof(struct node));
+    n->left=n->right=NULL;
+    return n;
+
+}
+void insert(){
+    int val;
+    printf("enter the value");
+    scanf("%d",&val);
+    temp=root;
+    while(1)
+    {
+        label:
+        if(val<temp->data){
+            if(temp->left==NULL){
+                temp->left=create();
+                temp->left->data=val;
+                return ;
+            }
+            else{
+                temp=temp->left;
+                goto label;
+        }
+    }
+    else{
+        if(temp->right==NULL){
+            temp->right=create();
+            temp->right->data=val;
+            return;
+        }else{
+            temp=temp->right;
+            goto label;
+        }
+    }
+}
+}
+void insert1(){
+    int val;
+    printf("enter the value");
+    scanf("%d",&val);
+    temp1=root1;
+    while(1)
+    {
+        label:
+        if(val<temp1->data){
+            if(temp1->left==NULL){
+                temp1->left=create();
+                temp1->left->data=val;
+                return ;
+            }
+            else{
+                temp1=temp1->left;
+                goto label;
+        }
+    }
+    else{
+        if(temp1->right==NULL){
+            temp1->right=create();
+            temp1->right->data=val;
+            return;
+        }else{
+            temp1=temp1->right;
+            goto label;
+        }
+    }
+}
+}
+void display(struct node *p,struct node *p1){
+  if(p!=NULL&&p1!=NULL){
+       if(p->data==p1->data){
+      display(p->left,p1->left);
+      display(p->right,p1->right);
+      printf("identical");
+}else{
+    printf(" not identical");
+}
+}
+}
+int main() {
+   
+       int val;
+       root=create();
+       printf("enter the value root");
+       scanf("%d",&val);
+       root->data=val;
+        root1=create();
+       printf("enter the value root1");
+        scanf("%d",&val);
+       root1->data=val;
+       int choise;
+       printf("enter the value");
+       scanf("%d",&choise);
+     {
+           
+       for(int i=0;i<3;i++){
+           insert();
+   }
+   printf("for root1");
+    for(int i=0;i<3;i++){
+           insert1();
+   }
+   display(root,root1);
+       }
+
+    return 0;
+}
