@@ -1,0 +1,18 @@
+#include <stdio.h>
+int sum(int a[],int i,int n){
+  if(i>=n)
+  return 0;
+  return (a[i]+sum(a,i+1,n));
+   
+}
+int main() {
+  int a[4];
+  for(int i=0;i<4;i++){
+      printf("enter the digit=\n");
+      scanf("%d",&a[i]);
+  }
+
+  int k=sum(a,0,4);
+printf("%d",k);
+    return 0;
+}
