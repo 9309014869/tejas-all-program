@@ -1,0 +1,18 @@
+class Simple extends Thread{
+    public void run(){
+        System.out.println("task one");
+    }
+}
+class Simple1 extends Thread{
+    public void run(){
+        System.out.println("task two");
+    }
+}
+class Tesk3{
+    public static void main(String args[]){
+        Simple t1=new Simple();
+        Simple1 t2=new Simple1();
+        t1.start();
+        t2.start();
+    }
+}
