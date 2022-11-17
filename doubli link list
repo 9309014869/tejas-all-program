@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct node{
+    int data;
+    struct node*next,*prev;
+}*head;
+void create(){
+    struct node*p,*t;
+    head=(struct node*)malloc(sizeof(struct node));
+    printf("enter the data");
+    scanf("%d",&head->data);
+    head->next=NULL;
+    head->prev=NULL;
+    p=head;
+    for(int i=0;i<3;i++){
+       struct node*t=(struct node*)malloc(sizeof(struct node));
+          printf("enter the data");
+    scanf("%d",&t->data);
+    t->next=NULL;
+    t->prev=p;
+    p->next=t;
+    p=t;
+    }
+    struct node*m=head;
+    while(m->next!=0){
+        m=m->next;
+    }
+  m->next=head;
+}
+void display(){
+    char a[10];
+    char yes;
+    struct node*p=head;
+    printf("do you want to dispaly\t to enter yes or not enter not");
+    scanf("%s",&a);
+    if(a==yes){
+    while(p->next!=head){
+       
+        printf("%d\n",p->data);
+        p=p->next;
+    }
+ printf("%d",p->data);
+}
+else{
+    printf("the user do not dispaly");
+}
+}
+
+int main() {
+   create();
+   display();
+    return 0;
+}
