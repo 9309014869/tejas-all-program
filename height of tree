@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node*left,*right;
+};
+int maxdefth(struct node *p)
+{  
+    int rDepth;
+int lDepth;
+    if(p==NULL)
+    return 0;
+    else{
+      lDepth =maxdefth(p->left);
+      rDepth=maxdefth(p->right);
+     
+    }
+    if(lDepth>rDepth)
+    return (lDepth+1);
+    else
+    return (rDepth+1);
+    
+}
+struct node *create(int val)
+{
+    struct node *p=(struct node*)malloc(sizeof(struct node));
+    p->data=val;
+    p->left=p->right=NULL;
+    return p;
+}
+void dispaly(struct node *p){
+    if(p!=0){
+        dispaly(p->left);
+        dispaly(p->right);
+        printf("%d\n",p->data);
+    }
+}
+int main() {
+struct node*root=create(34);
+
+    root->left = create(2);
+    root->right = create(3);
+    root->left->left = create(4);
+    root->left->right = create(5);
+
+    printf("Height of tree is %d\n", maxdefth(root));
+    dispaly(root);
+
+    return 0;
+}
