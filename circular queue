@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include<stdlib.h>
+int a[9];
+int rear=-1;
+int fornt=-1;
+void enque(){
+    int val;
+    if(rear=-1&&fornt=-1){
+        rear=0;
+        fornt=0;
+        printf("enter the value");
+        scanf("%d",&val)
+        a[rear]=val;
+    }
+    else if((rear+1)%9==fornt){
+        printf("the queue is full");
+    }
+    else{
+        printf("enter the value");
+        scanf("%d",&val)
+        rear=(rear+1)%9;
+        a[rear]=val;
+    }
+    return 0;
+}
+void deque(){
+    if (fornt==-1&&rear==-1)
+    {
+        printf("the queue is empty");
+    }
+    else if(fornt ==rear){
+        fornt=rear=-1;
+    }
+    else{
+        fornt=(fornt+1)%9;
+    }
+    }
+    void display(){
+        int i=fornt;
+        if(fornt==-1&&rear==-1)
+        {
+            printf("the queue is empty");
+        }
+        else{
+            printf("\n the element is queue");
+        }
+        while(i<=rear){
+            printf("%d",a[i]);
+            i=(i+1)%9;
+        }
+        }
