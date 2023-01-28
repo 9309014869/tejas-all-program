@@ -1,0 +1,25 @@
+
+import java.io.*;
+ class Tejas{
+    public static void main(String args[]){
+        float list[]={1.3f,1.34f,1.4f,3.4f};
+        FileOutputStream fos =new FileOutputStream("List.txt");
+        DataInputStream dis = DataInputStream(fos);
+        dos.writeInt(list.length);
+        for(float f:list){
+            dos.writeFloat(f);
+        }
+        dos.close();
+        fos.close();
+        FileInputStream fis = new FileInputStream("List.txt");
+        DataInputStream dis = DataInputStream(fis);
+        int length = dis.readInt();
+        float data;
+        for(int i=0;i<length;i++){
+            data= dis.readFloat();
+            System.out.println(data);
+        }
+        dis.close();
+        fis.close();
+    }
+}
