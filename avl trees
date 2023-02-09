@@ -1,0 +1,86 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<malloc.h>
+struct node{
+    struct node *left;
+    int data ;
+    int height;
+    struct node *right;
+}*root=NULL;
+int height(struct node *p){
+    int h1,hr;
+  h1=p && p->left?p->left->height:0;
+   hr=p && p->right?p->right->height:0;
+   return h1>hr?h1+1:hr+1;
+}
+int balacefactor(struct node *p){
+    int h1,hr;
+    h1=p && p->left?p->left->height:0;
+   hr=p && p->right?p->right->height:0;
+   return h1-hr;
+}
+struct node *llrotation(struct node *p){
+    struct node *p1=p->left;
+    struct node *p1r=p->right;
+    p1->right=p;
+    p->left=p1r;
+    p->height=height(p);
+    p1->height=height(p1);
+    if(root==p)
+       root=p1;
+       return p1;
+}
+struct node *lrrotaion(struct node *p){
+    struct node *p1=p->left;
+    struct node *p1r=p->right;
+    p1->right=p1r->left;
+    p1->left=p1r->right;
+     p1->height=height(p1);
+     p->height=height(p);
+     p1r->height=height(plr);
+     if(root==p)
+       root=p1r
+     return p1r;
+    
+}
+struct node *rrrotation(struct node *p){
+    
+}
+struct node *rlrotation(struct node *p){
+    
+}
+struct node *insert(struct node *p,int key){
+    struct node *t=NULL;
+    if(p==NULL){
+        t=(struct node*)malloc(sizeof(struct node));
+        t->data=key;
+        t->height=1;
+        return t;
+    }
+    if(key<p->data)
+    {
+        p->left=insert(p->left,key);
+    }
+    else{
+        p->right=insert(p->right,key);
+    }
+p->height=height(p);
+if(balacefactor(p)==2 && balacefactor(p->left)==1)
+ return llrotation(p);
+ else if(balacefactor(p)==2 && balacefactor(p->left)==-1)
+   return lrrotaion(p);
+   else if(balacefactor(p)==-2 && balacefactor(p->left)==-1)
+   return rrrotation(p);
+  else if (balacefactor(p)==-2 && balacefactor(p->left)==1)
+  return rlrotation(p);
+    return p;
+}
+int main() {
+    // Write C code here
+    printf("Hello world");
+    insert(root,10);
+    insert(root,5);
+    insert(root,7);
+
+    return 0;
+}
