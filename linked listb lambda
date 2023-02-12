@@ -1,0 +1,19 @@
+import java.util.*;  
+public class LinkedList1{  
+ public static void main(String args[]){  
+  
+  LinkedList<Integer> al=new LinkedList<Integer>(); 
+  LinkedList<Integer> al1=new LinkedList<Integer>(); 
+  al.add(12);  
+  al.add(123);  
+  al.add(923);  
+  al.add(45); 
+  al.add(78);
+ 
+ 
+  for(Integer x:al){
+      System.out.println(x);
+  }
+  al.forEach(n->System.out.println(n));
+  }  
+}  
