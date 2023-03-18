@@ -1,0 +1,26 @@
+/* Online Java Compiler and Editor */
+import java.util.*;
+public class HelloWorld{
+
+     public static void main(String []args){
+         ArrayList<Integer>al=new ArrayList<Integer>(20);
+         ArrayList<Integer>al1=new ArrayList<Integer>(List.of(40,70,87));
+         ArrayList<Integer>al2=new ArrayList<Integer>(20);
+         ArrayList<String>al3=new ArrayList<String>(List.of("Tejas","Akash","Kunal","sushant","aaba","abhishek","ashawin"));
+         LinkedList<Integer>s=new LinkedList<Integer>(List.of(10,90,98,87));
+         al2.addAll(al1);
+          System.out.println(al2);
+          System.out.println(al2. indexOf(70));
+         al.add(10);
+         al.addAll(al1);
+         al.remove(2);
+         System.out.println(al);
+        
+        al1.forEach(n->System.out.println(n));
+        al3.forEach(x->System.out.print(x+" "));
+        s.forEach(y->System.out.println(y));
+        s.remove(2);
+        System.out.println(s);
+        System.out.println(s.indexOf(87));
+     }
+}
